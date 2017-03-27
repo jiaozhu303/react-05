@@ -1,12 +1,11 @@
 /* 入口启动文件 */
-import React from 'react'
-import { render } from 'react-dom'
+import React, {Component, PropTypes} from 'react'
+import ReactDOM, {render} from 'react-dom'
+import {Provider, connect} from 'react-redux';
 
-const App = () => {
-    return (<h1>hello react 05!</h1>);
-};
+import store from './redux/Store';
+import RootApp from './containers/RootApp';
 
-
-const root = document.getElementById('app');
-
-render( <App />, root );
+render(<Provider store={store}>
+    <RootApp />
+</Provider>, document.querySelector("#app"));
