@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react'
+import React, {Component} from 'react'
 import Counter from './Counter';
 
 export default class Page extends Component {
