@@ -8,9 +8,22 @@ import RootApp from './containers/RootApp';
 
 import DevTool from './containers/DevTool';
 
+let node ;
+if(__DEV__){
+    node = (
+        <div>
+            <DevTool />
+            <RootApp />
+        </div>
+    );
+}
+
+if(__PROD__){
+    node = (
+            <RootApp />
+    );
+}
+
 render(<Provider store={store}>
-    <div>
-        <DevTool />
-        <RootApp />
-    </div>
+    {node}
 </Provider>, document.querySelector("#app"));
